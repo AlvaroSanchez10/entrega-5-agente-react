@@ -1,0 +1,41 @@
+{
+  "clients": [
+    {
+      "client_id": 102,
+      "name": "Ana Martínez",
+      "orders": [
+        {
+          "order_id": 1001,
+          "date": "2026-08-10",
+          "total": 4500
+        },
+        {
+          "order_id": 1002,
+          "date": "2026-08-22",
+          "total": 6000
+        },
+        {
+          "order_id": 1003,
+          "date": "2026-09-05",
+          "total": 4000
+        }
+      ]
+    },
+    {
+      "client_id": 205,
+      "name": "Carlos Gómez",
+      "orders": [
+        {
+          "order_id": 2001,
+          "date": "2026-08-15",
+          "total": 7200
+        },
+        {
+          "order_id": 2002,
+          "date": "2026-09-12",
+          "total": 3800
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "thread_id": "demo-cliente-1",
+  "recursion_limit": 10,
+  "description": "Traza real de ejecución del agente ReAct con tool calling y memoria persistente.",
+  "messages": [
+    {
+      "type": "human",
+      "content": "Compará los clientes 102 y 205. Decime cuántos pedidos hizo cada uno y cuál gastó más en total."
+    },
+    {
+      "type": "ai",
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "buscar_pedidos",
+          "args": {
+            "cliente_id": 102
+          },
+          "id": "fc_4da2d81e-7522-4833-85c0-fc0ac55fa839",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "type": "tool",
+      "content": "{\"client_id\": 102, \"name\": \"Ana Martínez\", \"order_count\": 3, \"total_spent\": 14500, \"orders\": [{\"order_id\": 1001, \"date\": \"2026-08-10\", \"total\": 4500}, {\"order_id\": 1002, \"date\": \"2026-08-22\", \"total\": 6000}, {\"order_id\": 1003, \"date\": \"2026-09-05\", \"total\": 4000}]}",
+      "name": "buscar_pedidos",
+      "tool_call_id": "fc_4da2d81e-7522-4833-85c0-fc0ac55fa839"
+    },
+    {
+      "type": "ai",
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "buscar_pedidos",
+          "args": {
+            "cliente_id": 205
+          },
+          "id": "fc_e3d62168-a6af-42cc-8552-64e335dbfae9",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "type": "tool",
+      "content": "{\"client_id\": 205, \"name\": \"Carlos Gómez\", \"order_count\": 2, \"total_spent\": 11000, \"orders\": [{\"order_id\": 2001, \"date\": \"2026-08-15\", \"total\": 7200}, {\"order_id\": 2002, \"date\": \"2026-09-12\", \"total\": 3800}]}",
+      "name": "buscar_pedidos",
+      "tool_call_id": "fc_e3d62168-a6af-42cc-8552-64e335dbfae9"
+    },
+    {
+      "type": "ai",
+      "content": "**Comparación de clientes**\n\n| Cliente | Nº de pedidos | Total gastado |\n|---------|---------------|---------------|\n| 102 (Ana Martínez) | 3 | 14 500 |\n| 205 (Carlos Gómez) | 2 | 11 000 |\n\n- **Pedidos**: Ana Martínez (102) realizó **una orden más** que Carlos Gómez (205).  \n- **Gasto total**: Ana Martínez gastó **3 500 unidades más** que Carlos Gómez.\n\nEn resumen, el cliente 102 hizo más pedidos y también gastó más en total."
+    },
+    {
+      "type": "human",
+      "content": "¿Y cuál fue el último pedido del cliente que gastó más?"
+    },
+    {
+      "type": "ai",
+      "content": "El cliente que gastó más fue **Ana Martínez (ID 102)**.  \nSu último pedido fue:\n\n- **ID del pedido:** 1003  \n- **Fecha:** 2026‑09‑05  \n- **Monto:** 4 000 unidades\n\nAsí, el último pedido de Ana Martínez se realizó el 5 de septiembre de 2026."
+    }
+  ]
+}
